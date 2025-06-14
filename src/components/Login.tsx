@@ -9,7 +9,7 @@ export default function LoginPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
-    router.push("/menu")
+    router.push("http://localhost:8080/oauth2/authorization/google")
   }
 
   return (

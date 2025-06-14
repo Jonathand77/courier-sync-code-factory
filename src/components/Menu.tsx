@@ -10,6 +10,7 @@ export default function MenuPage() {
 
   return (
     <div className="relative min-h-screen bg-white flex items-center justify-center overflow-hidden">
+      {/* Fondo degradado */}
       {/* Fondos decorativos basados en Figma */}
       <div className="absolute w-[496px] h-[509px] left-[500px] top-[600px] rotate-[-30.29deg] animate-float-slow">
         <Image src="/img/Figura1.png" alt="Figura 1" fill className="object-contain" />
