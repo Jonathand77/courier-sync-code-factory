@@ -13,7 +13,6 @@ export default function UsersPage() {
   return (
     <div className="p-8 max-w-7xl mx-auto space-y-8">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-indigo-800">Gestión de Usuarios</h1>
         <Link 
             href="/users/add"
             className="flex items-center gap-2 px-4 py-2 font-semibold text-white bg-indigo-600 rounded-md shadow-md hover:bg-indigo-700 transition"

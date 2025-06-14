@@ -38,8 +38,6 @@ export default function LocationsPage() {
   
   return (
     <div className="p-8 max-w-7xl mx-auto space-y-8">
-      <h1 className="text-3xl font-bold text-indigo-700">Historial de Ubicaciones</h1>
-
       <section className="bg-white border border-neutral-200 shadow-md rounded-xl p-6 space-y-6">
         <div className="flex items-center gap-4">
           <h2 className="text-lg font-semibold text-indigo-900 flex-grow">Filtros</h2>

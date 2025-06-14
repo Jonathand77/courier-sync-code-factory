@@ -8,7 +8,7 @@ import { onError } from '@apollo/client/link/error'
 import { setContext } from '@apollo/client/link/context'
 
 const httpLink = new HttpLink({
-  uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || 'http://localhost:8080/graphql',
+  uri: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || 'https://feature4-backend-utuw.onrender.com/graphql',
 })
 
 const authLink = setContext((_, { headers }) => {

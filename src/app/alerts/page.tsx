@@ -30,12 +30,8 @@ export default function AlertsPage() {
   
   return (
     <div className="p-8 max-w-7xl mx-auto space-y-8">
-      <h1 className="text-3xl font-bold text-indigo-700">Gestión de Alertas</h1>
-
       <section className="bg-white border border-neutral-200 shadow-md rounded-xl p-6 space-y-6">
-        <h2 className="text-lg font-semibold text-indigo-900 flex-grow">Filtros</h2>
-
-        <div className="flex flex-wrap items-end gap-6">
+        <div className="flex flex-wrap items-end gap-6 justify-center">
           <div className="flex flex-col w-64">
             <label className="text-sm font-semibold text-gray-700 mb-1" htmlFor="userId">ID de Usuario</label>
             <input
