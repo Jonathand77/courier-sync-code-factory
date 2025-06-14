@@ -39,7 +39,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   // No mostrar el navbar en /login
-  if (pathname === '/login') return null;
+  if (pathname === '/login' || pathname === '/' || pathname == '') return null;
 
   return (
     <header className="bg-white border-b border-neutral-200 shadow-sm sticky top-0 z-50">
