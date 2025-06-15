@@ -12,12 +12,12 @@ const RoleBadge = ({ roleName }: { roleName?: string }) => {
   if (!roleName) return null;
 
   const roleStyles: { [key: string]: string } = {
-    ADMIN: 'bg-red-100 text-red-800',
-    SUPERVISOR: 'bg-yellow-100 text-yellow-800',
-    WAREHOUSE_STAFF: 'bg-blue-100 text-blue-800',
-    LOGISTICS_STAFF: 'bg-purple-100 text-purple-800',
-    CUSTOMER: 'bg-green-100 text-green-800',
-    DEFAULT: 'bg-gray-100 text-gray-800',
+    ADMIN: `bg-red-100 text-red-800`,
+    SUPERVISOR: `bg-yellow-100 text-[#052a47]`,
+    WAREHOUSE_STAFF: `bg-blue-100 text-[#052a47]`,
+    LOGISTICS_STAFF: `bg-purple-100 text-[#052a47]`,
+    CUSTOMER: `bg-green-200 text-[#052a47]`,
+    DEFAULT: `bg-gray-100 text-[#052a47]`,
   };
 
   const style = roleStyles[roleName.toUpperCase()] || roleStyles.DEFAULT;
@@ -31,16 +31,15 @@ const RoleBadge = ({ roleName }: { roleName?: string }) => {
 
 const UserAvatar = ({ name }: { name: string }) => {
     const colors = [
-        'bg-pink-200 text-pink-800', 'bg-purple-200 text-purple-800',
-        'bg-blue-200 text-blue-800', 'bg-indigo-200 text-indigo-800',
-        'bg-teal-200 text-teal-800', 'bg-green-200 text-green-800'
+        'bg-green-200', 'bg-teal-200', 'bg-blue-200', 
+        'bg-purple-200', 'bg-pink-200', 'bg-yellow-200'
     ];
     const charCodeSum = name.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
     const colorClass = colors[charCodeSum % colors.length];
     const initial = name.charAt(0).toUpperCase();
 
     return (
-        <div className={`flex items-center justify-center h-12 w-12 rounded-full ${colorClass} font-bold text-xl`}>
+        <div className={`flex items-center justify-center h-12 w-12 rounded-full ${colorClass} text-[#052a47] font-bold text-xl`}>
             {initial}
         </div>
     );
@@ -68,13 +67,13 @@ export function UserCard({ user }: UserCardProps) {
   };
 
   return (
-    <div className="group bg-white p-5 rounded-xl border border-neutral-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-neutral-300">
+    <div className="group bg-white p-5 rounded-xl border border-neutral-200 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-neutral-300 hover:shadow-[#4dbf38]/20">
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-4">
             <UserAvatar name={user.name} />
             <div>
                 <div className="flex items-center gap-3">
-                    <p className="font-semibold text-lg text-gray-800">{user.name}</p>
+                    <p className="font-semibold text-lg text-[#052a47]">{user.name}</p>
                     <RoleBadge roleName={user.roleEntity?.name} />
                 </div>
                 <p className="text-sm text-gray-500">{user.email}</p>

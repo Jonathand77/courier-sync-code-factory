@@ -22,14 +22,14 @@ export function LocationCard({ location }: LocationCardProps) {
       className="group flex flex-col justify-between rounded-xl border border-neutral-200
                  bg-white p-6 shadow-md shadow-neutral-200/50
                  transition-all duration-300 ease-in-out
-                 hover:border-neutral-300 hover:shadow-lg hover:shadow-indigo-500/10" // Color de sombra hover: teal
+                 hover:border-neutral-300 hover:shadow-lg hover:shadow-[#4dbf38]/20"
     >
       <header className="flex items-start justify-between pb-4 border-b border-neutral-200 transition-colors group-hover:border-neutral-300">
         <div className="flex items-center gap-3">
-          <div className="text-indigo-600">
+          <div className="text-[#4dbf38]">
             <MapPinIcon />
           </div>
-          <p className="text-lg font-semibold text-gray-800 pt-1">
+          <p className="text-lg font-semibold text-[#052a47] pt-1">
             {location.address}
           </p>
         </div>
@@ -47,7 +47,7 @@ export function LocationCard({ location }: LocationCardProps) {
           </div>
           <div>
             <span className="text-neutral-500">Paquete:</span>
-            <span className="ml-2 font-medium font-mono text-neutral-800">{location.packageEntity.trackingCode}</span>
+            <span className="ml-2 font-medium font-mono text-[#052a47]">{location.packageEntity.trackingCode}</span>
           </div>
         </div>
         
@@ -58,7 +58,7 @@ export function LocationCard({ location }: LocationCardProps) {
             </div>
             <div>
               <span className="text-neutral-500">Coords:</span>
-              <span className="ml-2 font-medium font-mono text-neutral-800">
+              <span className="ml-2 font-medium font-mono text-[#052a47]">
                 {location.latitude.toFixed(5)}, {location.longitude.toFixed(5)}
               </span>
             </div>
@@ -72,7 +72,7 @@ export function LocationCard({ location }: LocationCardProps) {
             <div className="flex items-center gap-1.5">
                 <UserIcon />
                 <span>
-                    Registrado por: <span className="font-medium text-neutral-600">{location.handlerUser.name}</span>
+                    Registrado por: <span className="font-medium text-[#052a47]">{location.handlerUser.name}</span>
                 </span>
             </div>
             <p>
@@ -83,7 +83,7 @@ export function LocationCard({ location }: LocationCardProps) {
           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <Link 
               href={`/locations/manage/${location.id}`}
-              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100 transition"
+              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-[#4dbf38] bg-green-100 rounded-md hover:bg-green-200 transition"
               title="Editar ubicación"
             >
               <EditIcon />

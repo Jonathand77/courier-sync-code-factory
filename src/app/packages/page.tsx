@@ -49,8 +49,8 @@ export default function PackagesPage() {
     <div className="p-8 max-w-7xl mx-auto space-y-8">
       <section className="bg-white border border-neutral-200 shadow-md rounded-xl p-6 space-y-6">
         <div className="flex items-center gap-4">
-          <h2 className="text-lg font-semibold text-indigo-900 flex-grow">Filtros</h2>
-          <label className="inline-flex items-center gap-2 text-sm font-medium text-gray-700">
+          <h2 className="text-lg font-semibold text-[#052a47] flex-grow">Filtros</h2>
+          <label className="inline-flex items-center gap-2 text-sm font-medium text-[#052a47]">
             <input
               type="checkbox"
               checked={isMultiFilter}
@@ -58,7 +58,7 @@ export default function PackagesPage() {
                 setIsMultiFilter(e.target.checked);
                 resetAll();
               }}
-              className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+              className="h-4 w-4 text-[#4dbf38] border-gray-300 rounded focus:ring-[#4dbf38]"
             />
             Múltiple filtro
           </label>
@@ -66,12 +66,12 @@ export default function PackagesPage() {
 
         <div className="flex flex-wrap items-end justify-center gap-6">
           <div className="flex flex-col w-64">
-            <label className="text-sm font-semibold text-gray-700 mb-1" htmlFor="tracking">Código de seguimiento</label>
+            <label className="text-sm font-semibold text-[#052a47] mb-1" htmlFor="tracking">Código de seguimiento</label>
             <input
               id="tracking"
               type="text"
               placeholder="Ingrese código"
-              className="px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 disabled:bg-neutral-100 disabled:text-neutral-500 disabled:cursor-not-allowed"
+              className="px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38] disabled:bg-neutral-100 disabled:text-neutral-500 disabled:cursor-not-allowed"
               value={draftFilters.trackingCode}
               onChange={e => handleFilterChange({ trackingCode: e.target.value })}
               disabled={isUniqueIdFieldDisabled}
@@ -79,12 +79,12 @@ export default function PackagesPage() {
           </div>
           
           <div className="flex flex-col w-64">
-            <label className="text-sm font-semibold text-gray-700 mb-1" htmlFor="packageId">ID de Paquete</label>
+            <label className="text-sm font-semibold text-[#052a47] mb-1" htmlFor="packageId">ID de Paquete</label>
             <input
               id="packageId"
               type="text"
               placeholder="Ingrese ID"
-              className="px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 disabled:bg-neutral-100 disabled:text-neutral-500 disabled:cursor-not-allowed"
+              className="px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38] disabled:bg-neutral-100 disabled:text-neutral-500 disabled:cursor-not-allowed"
               value={draftFilters.id}
               onChange={e => handleFilterChange({ id: e.target.value })}
               disabled={isUniqueIdFieldDisabled}
@@ -92,7 +92,7 @@ export default function PackagesPage() {
           </div>
 
           <div className="flex flex-col w-64">
-            <label className="text-sm font-semibold text-gray-700 mb-1">Estado</label>
+            <label className="text-sm font-semibold text-[#052a47] mb-1">Estado</label>
             <StatusFilter
               value={draftFilters.statusIds}
               onChange={ids => handleFilterChange({ statusIds: ids })}
@@ -100,58 +100,58 @@ export default function PackagesPage() {
           </div>
           
           <div className="flex flex-col w-64">
-            <label className="text-sm font-semibold text-gray-700 mb-1" htmlFor="userId">ID de Usuario</label>
+            <label className="text-sm font-semibold text-[#052a47] mb-1" htmlFor="userId">ID de Usuario</label>
             <input
               id="userId"
               type="text"
               placeholder="Ingrese ID de usuario"
-              className="px-3 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500"
+              className="px-3 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38]"
               value={draftFilters.userId}
               onChange={e => handleFilterChange({ userId: e.target.value })}
             />
           </div>
           
           <div className="flex flex-col w-64">
-            <label className="text-sm font-semibold text-gray-700 mb-1" htmlFor="origin">Origen</label>
+            <label className="text-sm font-semibold text-[#052a47] mb-1" htmlFor="origin">Origen</label>
             <input
               id="origin"
               type="text"
               placeholder="Ciudad de origen"
-              className="px-3 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500"
+              className="px-3 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38]"
               value={draftFilters.origin}
               onChange={e => handleFilterChange({ origin: e.target.value })}
             />
           </div>
           
           <div className="flex flex-col w-64">
-            <label className="text-sm font-semibold text-gray-700 mb-1" htmlFor="destination">Destino</label>
+            <label className="text-sm font-semibold text-[#052a47] mb-1" htmlFor="destination">Destino</label>
             <input
               id="destination"
               type="text"
               placeholder="Ciudad de destino"
-              className="px-3 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500"
+              className="px-3 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38]"
               value={draftFilters.destination}
               onChange={e => handleFilterChange({ destination: e.target.value })}
             />
           </div>
 
           <div className="flex flex-col w-64">
-            <label className="text-sm font-semibold text-gray-700 mb-1" htmlFor="startDate">Fecha inicio</label>
+            <label className="text-sm font-semibold text-[#052a47] mb-1" htmlFor="startDate">Fecha inicio</label>
             <input
               id="startDate"
               type="date"
-              className="px-3 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500"
+              className="px-3 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38]"
               value={draftFilters.startDate.split('T')[0] || ''}
               onChange={e => handleFilterChange({ startDate: e.target.value ? `${e.target.value}T00:00:00.000000` : '' })}
             />
           </div>
 
           <div className="flex flex-col w-64">
-            <label className="text-sm font-semibold text-gray-700 mb-1" htmlFor="endDate">Fecha fin</label>
+            <label className="text-sm font-semibold text-[#052a47] mb-1" htmlFor="endDate">Fecha fin</label>
             <input
               id="endDate"
               type="date"
-              className="px-3 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500"
+              className="px-3 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38]"
               value={draftFilters.endDate.split('T')[0] || ''}
               onChange={e => handleFilterChange({ endDate: e.target.value ? `${e.target.value}T23:59:59.999999` : '' })}
             />
@@ -160,7 +160,7 @@ export default function PackagesPage() {
           <div className="flex items-end gap-2">
             <button
               onClick={applyFilters}
-              className="px-4 py-2 rounded-md shadow transition bg-indigo-600 text-white hover:bg-indigo-700"
+              className="px-4 py-2 rounded-md shadow transition font-semibold bg-[#80d12a] text-[#052a47] hover:bg-[#4dbf38]"
             >
               Buscar
             </button>

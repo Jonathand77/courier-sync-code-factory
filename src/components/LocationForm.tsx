@@ -5,7 +5,7 @@ import { ApolloError, useMutation } from '@apollo/client';
 import { useRouter } from 'next/navigation';
 import { ADD_LOCATION_MUTATION, UPDATE_LOCATION_MUTATION, DELETE_LOCATION_MUTATION } from '../services/location.mutations';
 import { FIND_ALL_LOCATIONS_QUERY } from '../services/location.queries';
-import { Location } from '../types/location'; // Necesitarás crear este tipo
+import { Location } from '../types/location';
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 
 const CheckCircleIcon = () => ( <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg> );
@@ -47,7 +47,7 @@ export function LocationForm({ initialData }: LocationFormProps) {
   
   const handleSuccess = (message: string) => {
     setFeedback({ type: 'success', message });
-    setTimeout(() => router.push('/locations'), 2000); // Redirige a la lista de ubicaciones
+    setTimeout(() => router.push('/locations'), 2000);
   };
 
   const handleError = (error: ApolloError) => {
@@ -116,7 +116,7 @@ export function LocationForm({ initialData }: LocationFormProps) {
   return (
     <div className="bg-white border border-neutral-200 shadow-lg rounded-xl max-w-2xl mx-auto">
       <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold text-indigo-800">
+        <h2 className="text-2xl font-bold text-[#052a47]">
           {isEditMode ? 'Editar Ubicación' : 'Registrar Nueva Ubicación'}
         </h2>
         <p className="text-gray-500 mt-1">
@@ -127,32 +127,32 @@ export function LocationForm({ initialData }: LocationFormProps) {
       <form onSubmit={handleSubmit} className="p-8 space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-                <label htmlFor="handlerUserId" className="block text-sm font-semibold text-gray-700 mb-1">ID del Usuario (Handler)</label>
-                <input type="text" name="handlerUserId" id="handlerUserId" value={formData.handlerUserId} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500" required />
+                <label htmlFor="handlerUserId" className="block text-sm font-semibold text-[#052a47] mb-1">ID del Usuario (Handler)</label>
+                <input type="text" name="handlerUserId" id="handlerUserId" value={formData.handlerUserId} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38]" required />
             </div>
             <div>
-                <label htmlFor="packageId" className="block text-sm font-semibold text-gray-700 mb-1">ID del Paquete</label>
-                <input type="text" name="packageId" id="packageId" value={formData.packageId} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500" required />
+                <label htmlFor="packageId" className="block text-sm font-semibold text-[#052a47] mb-1">ID del Paquete</label>
+                <input type="text" name="packageId" id="packageId" value={formData.packageId} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38]" required />
             </div>
         </div>
         <div>
-            <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-1">Dirección</label>
-            <textarea name="address" id="address" value={formData.address} onChange={handleChange} rows={3} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500" required />
+            <label htmlFor="address" className="block text-sm font-semibold text-[#052a47] mb-1">Dirección</label>
+            <textarea name="address" id="address" value={formData.address} onChange={handleChange} rows={3} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38]" required />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-                <label htmlFor="latitude" className="block text-sm font-semibold text-gray-700 mb-1">Latitud</label>
-                <input type="number" step="any" name="latitude" id="latitude" value={formData.latitude} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500" />
+                <label htmlFor="latitude" className="block text-sm font-semibold text-[#052a47] mb-1">Latitud</label>
+                <input type="number" step="any" name="latitude" id="latitude" value={formData.latitude} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38]" />
             </div>
             <div>
-                <label htmlFor="longitude" className="block text-sm font-semibold text-gray-700 mb-1">Longitud</label>
-                <input type="number" step="any" name="longitude" id="longitude" value={formData.longitude} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500" />
+                <label htmlFor="longitude" className="block text-sm font-semibold text-[#052a47] mb-1">Longitud</label>
+                <input type="number" step="any" name="longitude" id="longitude" value={formData.longitude} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38]" />
             </div>
         </div>
 
         {feedback && (
           <div className={`flex items-center gap-3 p-3 rounded-md text-sm ${
-              feedback.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+              feedback.type === 'success' ? 'bg-green-100 text-[#4dbf38]' : 'bg-red-100 text-red-800'
             }`}>
             {feedback.type === 'success' ? <CheckCircleIcon /> : <ExclamationCircleIcon />}
             {feedback.message}
@@ -168,7 +168,7 @@ export function LocationForm({ initialData }: LocationFormProps) {
               </button>
             )}
           </div>
-          <button type="submit" disabled={isLoading} className="px-6 py-2.5 font-semibold text-white bg-indigo-600 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-300 disabled:cursor-wait">
+          <button type="submit" disabled={isLoading} className="px-6 py-2.5 font-semibold text-[#052a47] bg-[#80d12a] rounded-md shadow-md hover:bg-[#4dbf38] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4dbf38] disabled:opacity-60 disabled:cursor-wait">
             {isLoading ? 'Procesando...' : (isEditMode ? 'Guardar Cambios' : 'Registrar Ubicación')}
           </button>
         </div>

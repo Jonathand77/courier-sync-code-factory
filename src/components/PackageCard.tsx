@@ -26,12 +26,12 @@ export const PackageCard = ({ pkg }: PackageCardProps) => {
       className="group flex flex-col justify-between rounded-xl border border-neutral-200
                  bg-white p-6 shadow-md shadow-neutral-200/50
                  transition-all duration-300 ease-in-out
-                 hover:border-neutral-300 hover:shadow-lg hover:shadow-indigo-500/10"
+                 hover:border-neutral-300 hover:shadow-lg hover:shadow-[#4dbf38]/20"
     >
       <header className="flex items-start justify-between pb-4 border-b border-neutral-200 transition-colors group-hover:border-neutral-300">
         <div>
           <div className="flex items-center space-x-2">
-            <h3 className="font-mono text-lg text-indigo-600 pt-1">
+            <h3 className="font-mono text-lg text-[#4dbf38] pt-1">
               {pkg.trackingCode}
             </h3>
             <div className="relative flex items-center">
@@ -65,7 +65,7 @@ export const PackageCard = ({ pkg }: PackageCardProps) => {
               )}
             </div>
           </div>
-          <p className="text-sm font-normal text-neutral-800">
+          <p className="text-sm font-normal text-[#052a47]">
             {pkg.description}
           </p>
         </div>
@@ -75,17 +75,17 @@ export const PackageCard = ({ pkg }: PackageCardProps) => {
       </header>
       
       <div className="flex-grow py-6">
-        <div className="flex justify-between items-center text-neutral-800">
+        <div className="flex justify-between items-center">
           <div className="text-left">
             <p className="text-xs text-neutral-500">Origen</p>
-            <p className="font-medium text-base">{pkg.origin}</p>
+            <p className="font-medium text-base text-[#052a47]">{pkg.origin}</p>
           </div>
           <div className="px-4 text-center">
-            <span className="text-2xl text-neutral-400 transition-colors group-hover:text-indigo-500">→</span>
+            <span className="text-2xl text-neutral-400 transition-colors group-hover:text-[#4dbf38]">→</span>
           </div>
           <div className="text-right">
             <p className="text-xs text-neutral-500">Destino</p>
-            <p className="font-medium text-base">{pkg.destination}</p>
+            <p className="font-medium text-base text-[#052a47]">{pkg.destination}</p>
           </div>
         </div>
       </div>
@@ -94,17 +94,17 @@ export const PackageCard = ({ pkg }: PackageCardProps) => {
         <div className="flex items-center justify-between">
           <div className="text-xs text-neutral-500 space-y-1">
             <p>
-              Propietario: <span className="font-medium text-neutral-600">{pkg.ownerUser.name}</span>
+              Propietario: <span className="font-medium text-[#052a47]">{pkg.ownerUser.name}</span>
             </p>
             <p>
-              Registrado: <span className="font-medium text-neutral-600">{formattedDate}</span>
+              Registrado: <span className="font-medium text-[#052a47]">{formattedDate}</span>
             </p>
           </div>
           
           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <Link 
               href={`/packages/manage/${pkg.id}`}
-              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100 transition"
+              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-[#4dbf38] bg-green-100 rounded-md hover:bg-green-200 transition"
               title="Editar paquete"
             >
               <EditIcon />

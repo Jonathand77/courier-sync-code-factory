@@ -28,14 +28,14 @@ export function AlertCard({ alert }: AlertCardProps) {
   });
 
   return (
-    <div className="bg-white border border-indigo-200 shadow-sm rounded-lg p-5 space-y-4">
+    <div className="bg-white border border-[#4dbf38] shadow-sm rounded-lg p-5 space-y-4">
       <div className="flex justify-between items-start gap-4">
         <div className="flex items-center gap-3">
-          <div className="flex-shrink-0 text-indigo-600">
+          <div className="flex-shrink-0 text-[#4dbf38]">
             <AlertIcon />
           </div>
           <div>
-            <p className="text-lg font-bold text-indigo-700">{alert.alertTypeEntity.name}</p>
+            <p className="text-lg font-bold text-[#052a47]">{alert.alertTypeEntity.name}</p>
             <p className="text-sm text-gray-500">{formattedDate}</p>
           </div>
         </div>
@@ -45,7 +45,7 @@ export function AlertCard({ alert }: AlertCardProps) {
       </div>
 
       <div className="pl-9">
-        <p className="text-gray-700">{alert.description}</p>
+        <p className="text-[#052a47]">{alert.description}</p>
         {alert.alertTypeEntity.description && (
           <p className="mt-1 text-xs text-gray-500 italic">({alert.alertTypeEntity.description})</p>
         )}
@@ -57,7 +57,7 @@ export function AlertCard({ alert }: AlertCardProps) {
         <div className="flex items-center gap-3">
           <div className="flex-shrink-0 text-gray-500"><UserIcon /></div>
           <div>
-            <p className="font-semibold text-gray-700">Usuario notificado:</p>
+            <p className="font-semibold text-[#052a47]">Usuario notificado:</p>
             <p className="text-gray-600">{alert.user.name} ({alert.user.email})</p>
           </div>
         </div>
@@ -65,7 +65,7 @@ export function AlertCard({ alert }: AlertCardProps) {
         <div className="flex items-center gap-3">
           <div className="flex-shrink-0 text-gray-500"><PackageIcon /></div>
           <div>
-            <p className="font-semibold text-gray-700">Paquete relacionado:</p>
+            <p className="font-semibold text-[#052a47]">Paquete relacionado:</p>
             <p className="text-gray-600 font-mono">{alert.packageEntity.trackingCode}</p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { ApolloError, useMutation } from '@apollo/client';
 import { useRouter } from 'next/navigation';
 import { ADD_PACKAGE_MUTATION, UPDATE_PACKAGE_MUTATION, DELETE_PACKAGE_MUTATION } from '../services/package.mutations';
@@ -27,7 +27,7 @@ export function PackageForm({ initialData }: PackageFormProps) {
   const isEditMode = !!initialData;
   const router = useRouter();
 
-  if (true) {
+  if (process.env.NODE_ENV === 'development') {
     loadDevMessages();
     loadErrorMessages();
   }
@@ -55,9 +55,7 @@ export function PackageForm({ initialData }: PackageFormProps) {
     setFeedback({ type: 'error', message: `Error: ${error.message}` });
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -90,11 +88,8 @@ export function PackageForm({ initialData }: PackageFormProps) {
         handleSuccess('Paquete creado con éxito.');
       }
     } catch (error) {
-      if (error instanceof ApolloError) {
-        handleError(error);
-      } else {
-        console.error("Error inesperado en handleSubmit:", error);
-      }
+      if (error instanceof ApolloError) handleError(error);
+      else console.error("Error inesperado en handleSubmit:", error);
     }
   };
   
@@ -104,20 +99,13 @@ export function PackageForm({ initialData }: PackageFormProps) {
         await deletePackage({ variables: { id: initialData?.id } });
         handleSuccess('Paquete eliminado correctamente.');
       } catch (error) {
-        if (error instanceof ApolloError) {
-          handleError(error);
-        } else {
-          console.error("Error inesperado en handleDelete:", error);
-        }
+        if (error instanceof ApolloError) handleError(error);
+        else console.error("Error inesperado en handleDelete:", error);
       }
     }
   };
 
   const isLoading = loadingAdd || loadingUpdate || loadingDelete;
-
-  if (isEditMode && !initialData) {
-      return <p>Cargando datos...</p>; // O un spinner
-  }
 
   if (isEditMode && !initialData) {
     return <p>Cargando datos del paquete...</p>;
@@ -126,29 +114,29 @@ export function PackageForm({ initialData }: PackageFormProps) {
   return (
     <div className="bg-white border border-neutral-200 shadow-lg rounded-xl max-w-2xl mx-auto">
       <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold text-indigo-800">
+        <h2 className="text-2xl font-bold text-[#052a47]">
           {isEditMode ? 'Editar Paquete' : 'Registrar Nuevo Paquete'}
         </h2>
         <p className="text-gray-500 mt-1">
-          {isEditMode ? `Modificando paquete con código de seguimiento: ${initialData?.id}` : 'Completa los datos para registrar un nuevo paquete.'}
+          {isEditMode ? `Modificando paquete con ID: ${initialData?.id}` : 'Completa los datos para registrar un nuevo paquete.'}
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="p-8 space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-                <label htmlFor="ownerUserId" className="block text-sm font-semibold text-gray-700 mb-1">ID del Propietario</label>
-                <input type="text" name="ownerUserId" id="ownerUserId" value={formData.ownerUserId} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500" required />
+                <label htmlFor="ownerUserId" className="block text-sm font-semibold text-[#052a47] mb-1">ID del Propietario</label>
+                <input type="text" name="ownerUserId" id="ownerUserId" value={formData.ownerUserId} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38]" required />
             </div>
             
             <div>
-              <label htmlFor="statusId" className="block text-sm font-semibold text-gray-700 mb-1">Estado del Paquete</label>
+              <label htmlFor="statusId" className="block text-sm font-semibold text-[#052a47] mb-1">Estado del Paquete</label>
               <select
                 name="statusId"
                 id="statusId"
                 value={formData.statusId}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 bg-white"
+                className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38] bg-white"
                 required
               >
                 {STATUS_OPTIONS.map(status => (
@@ -160,23 +148,23 @@ export function PackageForm({ initialData }: PackageFormProps) {
             </div>
         </div>
         <div>
-            <label htmlFor="description" className="block text-sm font-semibold text-gray-700 mb-1">Descripción</label>
-            <textarea name="description" id="description" value={formData.description} onChange={handleChange} rows={3} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500" required />
+            <label htmlFor="description" className="block text-sm font-semibold text-[#052a47] mb-1">Descripción</label>
+            <textarea name="description" id="description" value={formData.description} onChange={handleChange} rows={3} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38]" required />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-                <label htmlFor="origin" className="block text-sm font-semibold text-gray-700 mb-1">Origen</label>
-                <input type="text" name="origin" id="origin" value={formData.origin} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500" required />
+                <label htmlFor="origin" className="block text-sm font-semibold text-[#052a47] mb-1">Origen</label>
+                <input type="text" name="origin" id="origin" value={formData.origin} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38]" required />
             </div>
             <div>
-                <label htmlFor="destination" className="block text-sm font-semibold text-gray-700 mb-1">Destino</label>
-                <input type="text" name="destination" id="destination" value={formData.destination} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500" required />
+                <label htmlFor="destination" className="block text-sm font-semibold text-[#052a47] mb-1">Destino</label>
+                <input type="text" name="destination" id="destination" value={formData.destination} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38]" required />
             </div>
         </div>
 
         {feedback && (
           <div className={`flex items-center gap-3 p-3 rounded-md text-sm ${
-              feedback.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+              feedback.type === 'success' ? 'bg-green-100 text-[#4dbf38]' : 'bg-red-100 text-red-800'
             }`}>
             {feedback.type === 'success' ? <CheckCircleIcon /> : <ExclamationCircleIcon />}
             {feedback.message}
@@ -192,7 +180,7 @@ export function PackageForm({ initialData }: PackageFormProps) {
               </button>
             )}
           </div>
-          <button type="submit" disabled={isLoading} className="px-6 py-2.5 font-semibold text-white bg-indigo-600 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-300 disabled:cursor-wait">
+          <button type="submit" disabled={isLoading} className="px-6 py-2.5 font-semibold text-[#052a47] bg-[#80d12a] rounded-md shadow-md hover:bg-[#4dbf38] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4dbf38] disabled:opacity-60 disabled:cursor-wait">
             {isLoading ? 'Procesando...' : (isEditMode ? 'Guardar Cambios' : 'Crear Paquete')}
           </button>
         </div>

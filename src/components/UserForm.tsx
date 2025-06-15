@@ -33,7 +33,7 @@ export function UserForm() {
   
   const handleSuccess = (message: string) => {
     setFeedback({ type: 'success', message });
-        setTimeout(() => router.push('/users'), 2000); 
+    setTimeout(() => router.push('/users'), 2000); 
   };
 
   const handleError = (error: ApolloError) => {
@@ -67,26 +67,26 @@ export function UserForm() {
   return (
     <div className="bg-white border border-neutral-200 shadow-lg rounded-xl max-w-lg mx-auto">
       <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold text-indigo-800">Crear Nuevo Usuario</h2>
+        <h2 className="text-2xl font-bold text-[#052a47]">Crear Nuevo Usuario</h2>
         <p className="text-gray-500 mt-1">Completa los datos para registrar un nuevo usuario.</p>
       </div>
       <form onSubmit={handleSubmit} className="p-8 space-y-6">
         <div>
-            <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">Nombre Completo</label>
-            <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500" required />
+            <label htmlFor="name" className="block text-sm font-semibold text-[#052a47] mb-1">Nombre Completo</label>
+            <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38]" required />
         </div>
         <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">Correo Electrónico</label>
-            <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500" required />
+            <label htmlFor="email" className="block text-sm font-semibold text-[#052a47] mb-1">Correo Electrónico</label>
+            <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38]" required />
         </div>
         <div>
-            <label htmlFor="roleId" className="block text-sm font-semibold text-gray-700 mb-1">Rol del Usuario</label>
+            <label htmlFor="roleId" className="block text-sm font-semibold text-[#052a47] mb-1">Rol del Usuario</label>
             <select
               name="roleId"
               id="roleId"
               value={formData.roleId}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 bg-white"
+              className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38] bg-white"
               required
             >
               {ROLE_OPTIONS.map(role => (
@@ -99,7 +99,7 @@ export function UserForm() {
 
         {feedback && (
           <div className={`flex items-center gap-3 p-3 rounded-md text-sm ${
-              feedback.type === 'success' ? 'bg-indigo-100 text-indigo-800' : 'bg-red-100 text-red-800'
+              feedback.type === 'success' ? 'bg-green-100 text-[#4dbf38]' : 'bg-red-100 text-red-800'
             }`}>
             {feedback.type === 'success' ? <CheckCircleIcon /> : <ExclamationCircleIcon />}
             {feedback.message}
@@ -107,7 +107,7 @@ export function UserForm() {
         )}
         
         <div className="flex justify-end pt-4 border-t">
-          <button type="submit" disabled={loading} className="px-6 py-2.5 font-semibold text-white bg-indigo-600 rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-300 disabled:cursor-wait">
+          <button type="submit" disabled={loading} className="px-6 py-2.5 font-semibold text-[#052a47] bg-[#80d12a] rounded-md shadow-md hover:bg-[#4dbf38] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#4dbf38] disabled:opacity-60 disabled:cursor-wait">
             {loading ? 'Creando...' : 'Crear Usuario'}
           </button>
         </div>

@@ -15,7 +15,7 @@ export default function UsersPage() {
       <div className="flex justify-between items-center">
         <Link 
             href="/users/add"
-            className="flex items-center gap-2 px-4 py-2 font-semibold text-white bg-indigo-600 rounded-md shadow-md hover:bg-indigo-700 transition"
+            className="flex items-center gap-2 px-4 py-2 font-semibold text-[#052a47] bg-[#80d12a] rounded-md shadow-md hover:bg-[#4dbf38] transition"
         >
             <AddUserIcon />
             Crear Nuevo Usuario

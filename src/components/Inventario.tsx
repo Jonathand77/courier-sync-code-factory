@@ -25,7 +25,7 @@ export default function Inventario() {
   return (
     <div className="min-h-screen bg-white p-6">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6 text-center text-[#052A47] transition duration-300 hover:text-blue-400">
+        <h1 className="text-3xl font-bold mb-6 text-center text-[#052a47] transition duration-300 hover:text-[#4dbf38]">
           Inventario de Envíos
         </h1>
 
@@ -35,11 +35,11 @@ export default function Inventario() {
             placeholder="Buscar por guía"
             value={busqueda}
             onChange={e => setBusqueda(e.target.value)}
-            className="border border-gray-300 rounded px-4 py-2 w-full md:w-1/2 transition duration-300 focus:ring-2 focus:ring-blue-300 focus:outline-none"
+            className="border border-gray-300 rounded px-4 py-2 w-full md:w-1/2 transition duration-300 focus:ring-2 focus:ring-[#4dbf38] focus:border-[#4dbf38] focus:outline-none"
           />
 
           <select
-            className="border border-gray-300 rounded px-4 py-2 w-full md:w-1/2 transition duration-300 cursor-pointer hover:border-blue-400"
+            className="border border-gray-300 rounded px-4 py-2 w-full md:w-1/2 transition duration-300 cursor-pointer hover:border-[#4dbf38]"
           >
             <option value="">Filtrar por columna</option>
             <option value="email">Email</option>
@@ -48,33 +48,33 @@ export default function Inventario() {
           </select>
         </div>
 
-        <div className="bg-[#F3F4F6] rounded shadow">
+        <div className="bg-[#F3F4F6] rounded shadow overflow-hidden">
           <ul>
             {filtrarDatos.map(item => (
               <li
                 key={item.id}
-                className="flex items-center justify-between border-b p-4 transition duration-300 hover:bg-blue-100"
+                className="flex items-center justify-between border-b p-4 transition duration-300 hover:bg-green-100"
               >
                 <div className="flex items-center gap-4">
                   <input
                     type="checkbox"
                     checked={seleccionados.includes(item.id)}
                     onChange={() => toggleSeleccion(item.id)}
-                    className="cursor-pointer"
+                    className="h-4 w-4 rounded border-gray-300 text-[#4dbf38] focus:ring-[#4dbf38] cursor-pointer"
                   />
                   <div>
-                    <p className="font-semibold text-[#052A47] transition duration-300 hover:text-blue-500">
+                    <p className="font-semibold text-[#052a47] transition duration-300 hover:text-[#4dbf38]">
                       {item.guia}
                     </p>
-                    <p className="text-sm text-gray-600 transition duration-300 hover:text-black">
+                    <p className="text-sm text-gray-600">
                       {item.email}
                     </p>
-                    <p className="text-sm text-gray-600 transition duration-300 hover:text-black">
+                    <p className="text-sm text-gray-600">
                       {item.ruta}
                     </p>
                   </div>
                 </div>
-                <span className="text-sm font-medium text-[#052A47] transition duration-300 hover:text-green-600">
+                <span className="text-sm font-medium text-[#052a47] transition duration-300 hover:text-[#4dbf38]">
                   {item.estado}
                 </span>
               </li>
@@ -88,12 +88,12 @@ export default function Inventario() {
           </p>
           <div className="flex gap-2">
             <button
-              className="px-4 py-2 bg-gray-200 rounded hover:bg-blue-300 hover:text-white transition duration-300 cursor-pointer"
+              className="px-4 py-2 bg-gray-200 rounded hover:bg-[#4dbf38] hover:text-white transition duration-300 cursor-pointer"
             >
               Anterior
             </button>
             <button
-              className="px-4 py-2 bg-gray-200 rounded hover:bg-blue-300 hover:text-white transition duration-300 cursor-pointer"
+              className="px-4 py-2 bg-gray-200 rounded hover:bg-[#4dbf38] hover:text-white transition duration-300 cursor-pointer"
             >
               Siguiente
             </button>
