@@ -1,209 +1,220 @@
-# CourierSync - Sistema Web para Optimización de Procesos Logísticos
-
-## Objetivo General 🚀
-
-Desarrollar un sistema web que optimice los procesos de transporte y distribución de la empresa, incrementando la eficiencia operativa, reduciendo tiempos de gestión y mejorando la experiencia del cliente mediante la automatización, trazabilidad y análisis de datos en tiempo real.
+# **📘 CourierSync - Sistema Web para Optimización de Procesos Logísticos**
 
 ---
 
-## Funcionalidades Principales 📋
+## 🛠️ Stack tecnológico y Arquitectura
 
-* **Feature 4. Control de Inventario en Tránsito**
-    * Monitorea los paquetes en todas las etapas del transporte, minimizando pérdidas y errores.
-        * **Autenticación y Autorización:** Acceso exclusivo para personal de almacén y logística al inventario en movimiento.
-        * **Registro de Paquetes (CRUD):** Ingreso y modificación de datos de paquetes en tránsito (código, estado, ubicación).
-        * **Actualización de Ubicación (CRUD):** Registro de la ubicación actual del paquete mediante escaneo o GPS, mejorando la trazabilidad.
-        * **Alerta de Incidencias:** Notificación inmediata ante extravíos, daños o retrasos detectados en el inventario.
-        * **Reporte de Inventario:** Resumen del estado actual del inventario en tránsito.
+![Next.js](https://img.shields.io/badge/Next.js-14+-000000?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3+-06B6D4?logo=tailwindcss)
+![Architecture](https://img.shields.io/badge/Architecture-Frontend%20Modular-blue)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?logo=githubactions)
+![Deploy](https://img.shields.io/badge/Deploy-Vercel-000000?logo=vercel)
+![Code Quality](https://img.shields.io/badge/Code%20Quality-ESLint-success)
+![GitHub repo size](https://img.shields.io/github/repo-size/Jonathand77/courier-sync-code-factory)
+![GitHub contributors](https://img.shields.io/github/contributors/Jonathand77/courier-sync-code-factory)
+![GitHub last commit](https://img.shields.io/github/last-commit/Jonathand77/courier-sync-code-factory)
+![Languages](https://img.shields.io/github/languages/count/Jonathand77/courier-sync-code-factory)
 
-## Tecnologías Utilizadas
+---
 
-* **Frontend:**
-    * Next.js
-    * Tailwind CSS
-    * TypeScript
-    * Iconos (especificar la librería de iconos usada, por ejemplo, Lucide React, Font Awesome, etc.)
+## 👤 Autor
 
-## Estructura del Proyecto
+| 👨‍💻 Nombre | 📧 Correo | 🏫 Link directo al repositorio | 🐙 Usuario GitHub |
+|---|---|---|---|
+| **Jonathan David Fernandez Vargas** | jonathanfdez62@gmail.com | [LinkRepositorio](https://github.com/Jonathand77/courier-sync-code-factory) | [jonathand77](https://github.com/jonathand77) |
 
+---
+
+## 1. 🔍 Introducción
+
+CourierSync es un sistema web orientado a optimizar los procesos de transporte y distribución de la empresa, incrementando la eficiencia operativa, reduciendo tiempos de gestión y mejorando la experiencia del cliente mediante automatización, trazabilidad y análisis de datos en tiempo real.
+
+Este repositorio corresponde al frontend desarrollado con Next.js, TypeScript y Tailwind CSS, enfocado en la **Feature 4: Control de Inventario en Tránsito**.
+
+---
+
+## 2. 🎯 Objetivo General
+
+Desarrollar un sistema web que optimice los procesos logísticos de transporte y distribución, facilitando la gestión de paquetes en tránsito con una experiencia de usuario clara, rápida y escalable.
+
+---
+
+## 3. 📋 Funcionalidades Principales
+
+### **Feature 4. Control de Inventario en Tránsito**
+
+- Monitoreo de paquetes en todas las etapas del transporte para minimizar pérdidas y errores.
+- **Autenticación y Autorización:** acceso exclusivo para personal de almacén y logística.
+- **Registro de Paquetes (CRUD):** ingreso y modificación de datos de paquetes en tránsito (código, estado, ubicación).
+- **Actualización de Ubicación (CRUD):** registro de la ubicación actual del paquete mediante escaneo o GPS.
+- **Alerta de Incidencias:** notificación inmediata ante extravíos, daños o retrasos detectados.
+- **Reporte de Inventario:** resumen del estado actual del inventario en tránsito.
+
+---
+
+## 4. ⚙️ Tecnologías Utilizadas
+
+### 💻 Frontend
+
+- Next.js
+- Tailwind CSS
+- TypeScript
+- Iconos (especificar la librería de iconos usada, por ejemplo, Lucide React o Font Awesome)
+
+---
+
+## 5. 📦 Estructura del Proyecto
 
 ```bash
 App/
 │
 ├───components/          # Componentes de la interfaz de usuario
-│   │
 │   ├───Login.tsx        # Componente para la vista de inicio de sesión
-│   │
 │   ├───Menu.tsx         # Componente para el menú de navegación
-│   │
-│   ├───Registro.tsx      # Componente para la vista de registro de usuarios
-│   │
-│   └───Inventario.tsx    # Componente para la vista de gestión de inventario
+│   ├───Registro.tsx     # Componente para la vista de registro de usuarios
+│   └───Inventario.tsx   # Componente para la vista de gestión de inventario
 ```
 
+---
+
+## 6. 🚀 Despliegue
+
+- **Integración Continua/Entrega Continua (CI/CD):** GitHub Actions
+- **Plataforma de Despliegue:** Vercel
 
 ---
 
-## Despliegue
+## 7. 🖥️ Guía Paso a Paso para la Ejecución
 
-* **Integración Continua/Entrega Continua (CI/CD):** GitHub Actions
-* **Plataforma de Despliegue:** Vercel
+### 7.1 Requisitos Previos
 
-## Ejecución 🔧
+- Node.js instalado en tu sistema.
+- npm o yarn instalado.
+- Acceso a un repositorio de GitHub (para clonar el proyecto).
+- Vercel CLI (opcional, para despliegue local y pruebas).
 
-### Requisitos Previos
+### 7.2 Clonar el Repositorio
 
-* Node.js instalado en tu sistema.
-* npm o yarn instalado.
-* Acceso a un repositorio de GitHub (para clonar el proyecto).
-* Vercel CLI (opcional, para despliegue local y pruebas).
+Abre tu terminal y ejecuta:
 
-### Pasos para la Ejecución
+```bash
+git clone https://github.com/Jonathand77/courier-sync-code-factory
+cd courier-sync-code-factory
+```
 
-1.  **Clonar el Repositorio:**
+### 7.3 Instalar Dependencias
 
-    Abre tu terminal y ejecuta el siguiente comando, reemplazando `<TU_REPOSITORIO>` con la URL de tu repositorio:
+```bash
+npm install
+# o
+yarn install
+```
 
-    ```bash
-    git clone [<TU_REPOSITORIO>](https://github.com/Jonathand77/courier-sync-code-factory)
-    cd courier-sync-code-factory
-    ```
+### 7.4 Configurar Variables de Entorno (si es necesario)
 
-2.  **Instalar Dependencias:**
+Si tu proyecto requiere variables de entorno (como claves de API, URLs de bases de datos, etc.), crea un archivo `.env.local` en la raíz del proyecto y define las variables necesarias. Por ejemplo:
 
-    Ejecuta el siguiente comando para instalar las dependencias del proyecto:
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+```
 
-    ```bash
-    npm install
-    # o
-    yarn install
-    ```
+Asegúrate de consultar la documentación del proyecto o los archivos de configuración para conocer las variables específicas que se requieren.
 
-3.  **Configurar Variables de Entorno (si es necesario):**
-
-    Si tu proyecto requiere variables de entorno (como claves de API, URLs de bases de datos, etc.), crea un archivo `.env.local` en la raíz del proyecto y define las variables necesarias.  Por ejemplo:
-
-    ```
-    NEXT_PUBLIC_API_URL=http://localhost:3000/api
-    ```
-    Asegúrate de consultar la documentación del proyecto o los archivos de configuración para conocer las variables de entorno específicas que se requieren.
-
-
----
-
-
-4.  **Ejecutar la Aplicación en Desarrollo:**
-
-    Ejecuta el siguiente comando para iniciar el servidor de desarrollo de Next.js:
-
-## Getting Started
-
-First, run the development server:
+### 7.5 Ejecutar la Aplicación en Desarrollo
 
 ```bash
 npm run dev
-# or
+# o
 yarn dev
-# or
+# o
 pnpm dev
-# or
+# o
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre `http://localhost:3000` con tu navegador para ver el resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Puedes empezar a editar la página modificando `app/page.tsx`. La vista se actualiza automáticamente conforme guardas cambios.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 7.6 Despliegue en Vercel (Opcional)
 
-## Learn More
+- **Instalar Vercel CLI (si no lo has hecho):**
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install -g vercel
+# o
+yarn global add vercel
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Iniciar sesión en Vercel:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+vercel login
+```
 
----
+- **Desplegar el proyecto:**
 
-## Deploy on Vercel
+```bash
+vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Vercel te guiará en el proceso de configuración y despliegue. Asegúrate de que `vercel.json` esté correctamente configurado.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Previsualizar el proyecto localmente:**
 
-
-    La aplicación estará disponible en `http://localhost:3000`.
-
-5.  **Despliegue en Vercel (Opcional):**
-
-    Si deseas desplegar la aplicación en Vercel, sigue estos pasos:
-
-    * **Instalar Vercel CLI (si no lo has hecho):**
-
-        ```bash
-        npm install -g vercel
-        # o
-        yarn global add vercel
-        ```
-
-    * **Iniciar sesión en Vercel:**
-
-        ```bash
-        vercel login
-        ```
-
-    * **Desplegar el proyecto:**
-
-        ```bash
-        vercel
-        ```
-
-        Vercel te guiará a través del proceso de configuración y despliegue.  Asegúrate de que el archivo `vercel.json` esté configurado correctamente en tu proyecto.
-    * **Previsualizar el proyecto (localmente):**
-       Si quieres previsualizar el proyecto antes de hacer deploy, puedes correr el siguiente comando:
-       ```bash
-       vercel dev
-       ```
+```bash
+vercel dev
+```
 
 ---
 
-## GitHub Actions
+## 8. ⚙️ GitHub Actions
 
-El proyecto está configurado con GitHub Actions para la integración continua y la entrega continua (CI/CD).  Esto significa que cada vez que se realizan cambios en el repositorio, se ejecutan automáticamente pruebas y se puede desplegar la aplicación en Vercel.
+El proyecto está configurado con GitHub Actions para CI/CD. Cada cambio en el repositorio puede disparar automáticamente procesos de validación y despliegue en Vercel.
 
-* **Workflow:** El workflow de GitHub Actions se define en el archivo `.github/workflows/main.yml` (o similar).
-* **Acciones:** El workflow puede incluir acciones como:
-    * `npm install` (o `yarn install`): Instala las dependencias del proyecto.
-    * `npm run build` (o `yarn build`): Construye la aplicación Next.js para producción.
-    * `vercel deploy --prebuilt`: Despliega la aplicación en Vercel.
-* **Despliegue Automático:** Configurado para desplegarse automáticamente en Vercel en cada push a la rama principal (o la rama que hayas configurado).
-* **Estado del Workflow:** El estado de los workflows se puede ver en la pestaña "Actions" del repositorio en GitHub.
-
+- **Workflow:** definido en `.github/workflows/main.yml` (o similar).
+- **Acciones típicas del workflow:**
+  - `npm install` o `yarn install`
+  - `npm run build` o `yarn build`
+  - `vercel deploy --prebuilt`
+- **Despliegue automático:** configurado para ejecutarse en push a la rama principal (o la rama definida por tu estrategia).
+- **Estado del workflow:** visible en la pestaña **Actions** del repositorio en GitHub.
 
 ---
 
+## 9. 🤝 Contribución
 
-## Contribución
+Si eres parte de Fábrica Escuela, las contribuciones son bienvenidas.
 
-¡Si eres parte de Fabrica escuela las contribuciones son bienvenidas! Si deseas contribuir a este proyecto, por favor sigue estos pasos:
+1. Haz un fork del repositorio.
+2. Crea una rama para tu funcionalidad (`git checkout -b mi-funcionalidad`).
+3. Haz commit de tus cambios (`git commit -am 'Agrega nueva funcionalidad'`).
+4. Sube los cambios a la rama (`git push origin mi-funcionalidad`).
+5. Crea un Pull Request.
 
-1.  Haz un fork del repositorio.
-2.  Crea una rama para tu funcionalidad (`git checkout -b mi-funcionalidad`).
-3.  Haz commit de tus cambios (`git commit -am 'Agrega nueva funcionalidad'`).
-4.  Sube los cambios a la rama (`git push origin mi-funcionalidad`).
-5.  Crea un nuevo Pull Request.
+---
 
-## Licencia 📄
+## 10. 📄 Licencia
 
-This project is licensed under the (MIT LICENSE) License - see the [LICENSE](LICENSE) file for details
+Este proyecto está licenciado bajo la licencia MIT. Revisa el archivo [LICENSE](LICENSE) para más detalles.
 
---- 
+---
 
-## Expressions of Gratitude 🎁
+## 11. 🎁 Agradecimientos
 
-* Tell others about this project 📢
-* Say thank you publicly 🤓.
+- Comparte este proyecto con otras personas 📢
+- Da las gracias públicamente 🤓
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
+
+## 12. 📚 Recursos
+
+- [Documentación oficial de Next.js](https://nextjs.org/docs)
+- [Aprende Next.js](https://nextjs.org/learn)
+- [Repositorio de Next.js en GitHub](https://github.com/vercel/next.js)
+- [Documentación de despliegue de Next.js](https://nextjs.org/docs/app/building-your-application/deploying)
+
+---
+
+## **Fin de la guía del proyecto CourierSync.**
